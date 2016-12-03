@@ -11,4 +11,7 @@ public class Offer {
     private String description;
     private String contact;
 
+    public void setId(long id) {
+        this.id = id;
+    }
 }
