@@ -2,6 +2,7 @@ package main;
 
 import model.Greeting;
 import model.Offer;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,15 +30,15 @@ public class OfferManager {
         return new Greeting(counter.incrementAndGet(),
                 String.format(template, name));
     }
-//
-//    @RequestMapping("/offers")
-//    public Offer offers(Offer offer){
-//        offer.setId(counter.incrementAndGet());
-//        offers.add(offer);
-//
-//        logger.log(INFO, "Offer succesfully added");
-//
-//        return offer;
-//    }
+
+    @RequestMapping("/offers")
+    public Offer offers(@RequestBody Offer offer){
+        offer.setId(counter.incrementAndGet());
+        offers.add(offer);
+
+        logger.log(INFO, "Offer succesfully added");
+
+        return offer;
+    }
 
 }
