@@ -1,4 +1,5 @@
 package model;
+
 /**
  * Created by Paweł on 2016-11-29.
  */
