@@ -1,3 +1,4 @@
+package model;
 /**
  * Created by Paweł on 2016-11-29.
  */
@@ -9,5 +10,5 @@ public class Offer {
     private String date;
     private String description;
     private String contact;
-    
+
 }
