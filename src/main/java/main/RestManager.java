@@ -27,7 +27,7 @@ public class RestManager {
         offer.setId(counter.incrementAndGet());
         offers.add(offer);
 
-        logger.log(INFO, "Offer succesfully added");
+        logger.log(INFO, "Offer successfully added");
 
         return offer;
     }
