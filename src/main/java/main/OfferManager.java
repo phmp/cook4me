@@ -1,5 +1,6 @@
-package offers;
+package main;
 
+import model.Greeting;
 import model.Offer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,14 +19,15 @@ import static java.util.logging.Level.*;
 @RestController
 public class OfferManager {
 
+    private static final String template = "Hello, %s!";
     Logger logger = Logger.getLogger("myLogger");
     private final AtomicLong counter = new AtomicLong();
     private List<Offer> offers = new ArrayList<>();
 
     @RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        String response = "dziala: " + counter.incrementAndGet();
-        return response;
+    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+        return new Greeting(counter.incrementAndGet(),
+                String.format(template, name));
     }
 //
 //    @RequestMapping("/offers")
