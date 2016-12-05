@@ -55,4 +55,18 @@ public class Offer {
     public String getContact() {
         return contact;
     }
+
+    @Override
+    public String toString() {
+        return "Offer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", place='" + place + '\'' +
+                ", date='" + date + '\'' +
+                ", description='" + description + '\'' +
+                ", contact='" + contact + '\'' +
+                '}';
+    }
+
+
 }
