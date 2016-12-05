@@ -4,5 +4,5 @@
 /target
 /test-output
 /workspace
-*.idea
-*.iml
+*.idea*
+*.iml*

@@ -31,4 +31,5 @@ public class RestManager {
 
         return offer;
     }
+
 }
