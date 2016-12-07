@@ -1,7 +1,7 @@
-package main;
+package com.cook4you.application;
 
-import controller.OfferManager;
-import model.Offer;
+import com.cook4you.controller.OfferManager;
+import com.cook4you.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
