@@ -1,0 +1,13 @@
+.jumbotron {
+	background-color: #bdbdbd; /* Yellow */
+	padding: 80px;
+}
+.bg-yellow {
+	background-color: #fffde7;
+}
+.navbar {
+	box-shadow: 0 8px 6px -6px #999;
+}
+.vertical-resize {
+	resize: vertical;
+}
