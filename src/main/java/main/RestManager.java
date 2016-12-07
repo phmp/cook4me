@@ -11,7 +11,11 @@ import java.util.logging.Logger;
 
 /**
  * Created by Paweł Proc on 2016-12-03.
+ *
+ * Class is responsible for provide REST interface from backed site.
+ *
  */
+
 @RestController
 public class RestManager {
 

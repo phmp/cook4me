@@ -12,7 +12,11 @@ import static java.util.logging.Level.INFO;
 
 /**
  * Created by Paweł Proc on 2016-12-06.
+ *
+ * Class is responsible for handling all operation related with Offers.
+ *
  */
+
 @Component
 public class OfferManager {
 
