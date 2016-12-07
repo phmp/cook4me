@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.logging.Logger;
 
 /**
- * Created by Paweł on 2016-12-03.
+ * Created by Paweł Proc on 2016-12-03.
  */
 @RestController
 public class RestManager {

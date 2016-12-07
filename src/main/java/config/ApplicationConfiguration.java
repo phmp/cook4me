@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by epawpro on 2016-12-06.
+ * Created by Paweł Proc on 2016-12-06.
  */
 @ConfigurationProperties
 @ComponentScan( basePackages = "controller")

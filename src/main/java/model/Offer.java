@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Created by Paweł on 2016-11-29.
+ * Created by Paweł Proc on 2016-11-29.
  */
 public class Offer {
 

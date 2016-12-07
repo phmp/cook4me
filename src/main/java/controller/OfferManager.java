@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import static java.util.logging.Level.INFO;
 
 /**
- * Created by epawpro on 2016-12-06.
+ * Created by Paweł Proc on 2016-12-06.
  */
 @Component
 public class OfferManager {
