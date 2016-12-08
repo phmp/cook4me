@@ -1,6 +1,6 @@
-package com.cook4you.controller;
+package com.cook4me.controller;
 
-import com.cook4you.model.Offer;
+import com.cook4me.model.Offer;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

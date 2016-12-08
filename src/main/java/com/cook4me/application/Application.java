@@ -1,6 +1,6 @@
-package com.cook4you.application;
+package com.cook4me.application;
 
-import com.cook4you.config.ApplicationConfiguration;
+import com.cook4me.config.ApplicationConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
