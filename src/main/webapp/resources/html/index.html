@@ -18,7 +18,7 @@
 <nav class="navbar navbar-default navbar-fixed-top bg-yellow">
     <div class="container">
         <div class="navbar-header navbar-right">
-            <a class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">Zaoferuj posiłek</a>
+            <a id="addOrder" class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">Zaoferuj posiłek</a>
         </div>
     </div>
 </nav>
@@ -66,8 +66,9 @@
                 </div>
             </div>
             <div class="modal-footer">
+    <!--            <button type="button" class="btn btn-secondary" data-dismiss="modal">Rezygnuję</button> -->
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Rezygnuję</button>
-                <button id="orderButton" type="button" class="btn btn-primary">Zapisz</button>
+                <button id="orderButton" type="button" class="btn btn-primary" data-dismiss="modal">Zapisz</button>
             </div>
         </div>
     </div>

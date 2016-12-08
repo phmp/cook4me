@@ -1,6 +1,8 @@
 var listItems = document.getElementsByClassName("form-control");
 var orderButton = document.getElementById("orderButton");
+var addOrder = document.getElementById("addOrder");
 orderButton.addEventListener("click", activateItem);
+addOrder.addEventListener("click", clearText);
 
 function activateItem() {
 	var name = listItems[0].value;
@@ -22,4 +24,10 @@ function activateItem() {
 	}
 	*/
 	http.send(params);
+}
+
+function clearText() {
+    for (i = 0; i < listItems.length; i++) {
+        listItems[i].value = "";
+    }
 }
