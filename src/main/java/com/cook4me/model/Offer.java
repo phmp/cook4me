@@ -1,4 +1,4 @@
-package model;
+package com.cook4me.model;
 
 /**
  * Created by Paweł Proc on 2016-11-29.

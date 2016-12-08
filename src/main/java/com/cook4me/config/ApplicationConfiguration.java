@@ -1,15 +1,13 @@
-package config;
+package com.cook4me.config;
 
-import controller.OfferManager;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by Paweł Proc on 2016-12-06.
  */
 @ConfigurationProperties
-@ComponentScan( basePackages = "controller")
+@ComponentScan( basePackages = "com/cook4me/controller")
 public class ApplicationConfiguration {
 
 }

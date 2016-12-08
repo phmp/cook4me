@@ -1,7 +1,7 @@
-package main;
+package com.cook4me.application;
 
-import controller.OfferManager;
-import model.Offer;
+import com.cook4me.controller.OfferManager;
+import com.cook4me.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
