@@ -1,6 +1,8 @@
 var listItems = document.getElementsByClassName("form-control");
 var orderButton = document.getElementById("orderButton");
+var addOrder = document.getElementById("addOrder");
 orderButton.addEventListener("click", activateItem);
+addOrder.addEventListener("click", clearText);
 
 function activateItem() {
 	var name = listItems[0].value;
@@ -14,12 +16,11 @@ function activateItem() {
 	var params = '{"name":"' + name + '","place":"' + place + '","date":"' + date + '","contact":"' + contact + '","description":"' + description + '"}'
 	http.open("POST", url, true);
 	http.setRequestHeader("Content-type", "application/json");
-	/*
-	http.onreadystatechange = function() {//Call a function when the state changes.
-	if(http.readyState == 4 && http.status == 200) {
-		alert(http.responseText);
-	    }
-	}
-	*/
 	http.send(params);
+}
+
+function clearText() {
+    for (i = 0; i < listItems.length; i++) {
+        listItems[i].value = "";
+    }
 }
