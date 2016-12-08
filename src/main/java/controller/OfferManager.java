@@ -4,7 +4,9 @@ import model.Offer;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
@@ -22,12 +24,22 @@ public class OfferManager {
 
     Logger logger = Logger.getLogger(getClass().toString());
     private final AtomicLong counter = new AtomicLong();
-    private List<Offer> offers = new ArrayList<>();
+    private Map<Long, Offer> offers = new HashMap<>();
 
     public Offer store(Offer offer){
-        offer.setId(counter.incrementAndGet());
-        offers.add(offer);
+        Long id = counter.incrementAndGet();
+        offer.setId(id);
+        offers.put(id,offer);
         logger.log(INFO, "Offer: " + offer.toString() + " successfully added.");
         return offer;
+    }
+
+    public Offer getOffer(long id) {
+        return offers.get(id);
+    }
+
+    public List<Offer> getOffers() {
+        List<Offer> offerList = new ArrayList(offers.values());
+        return offerList;
     }
 }
