@@ -1,10 +1,10 @@
-package com.cook4me.model;
+package com.cook4me.controller;
 
 import com.cook4me.controller.OfferManager;
+import com.cook4me.model.Offer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 
 /**
  * Created by Gaba on 2016-12-08.
