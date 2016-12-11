@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by Paweł Proc on 2016-12-06.
  */
 @ConfigurationProperties
-@ComponentScan( basePackages = "com/cook4me/controller")
+@ComponentScan(basePackages = "com/cook4me/controller")
 public class ApplicationConfiguration {
 
 }
