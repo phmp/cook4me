@@ -11,12 +11,17 @@ import org.junit.*;
 public class OfferManagerTest {
     private Offer offer;
     private OfferManager offerManager;
+    private Offer nullOffer;
+    private Offer almostNullOffer;
 
     @Before
     public void setUp(){
         offerManager = new OfferManager();
         offer = new Offer("bigos", "Krakow", "20.12.2016", "yummy stuff", "880880880");
-        }
+        nullOffer = null;
+        almostNullOffer = new Offer(null, null, null, null, null);
+
+    }
 
     @Test
     public void testStoreOffer(){
@@ -26,6 +31,26 @@ public class OfferManagerTest {
         Assert.assertEquals(offer, offerManager.getOffer(offer.getId()));
         Assert.assertEquals("bigos", offerManager.getOffer(offer.getId()).getName());
         Assert.assertEquals(offer, offerManager.getOffers().get(0));
+        Assert.assertNull(offerManager.getOffer(offer.getId() + 24));
+
+    }
+    @Test
+    public void testStoreOffer2(){
+        offerManager.store(offer);
+        offerManager.store(offer);
+
+        Assert.assertEquals(2, offerManager.getOffers().size());
+
+    }
+
+    @Test
+    public void testStoreOffer3(){
+        offerManager.store(offer);
+        offerManager.store(almostNullOffer);
+        offerManager.store(almostNullOffer);
+
+        Assert.assertEquals(3, offerManager.getOffers().size());
+        Assert.assertEquals(almostNullOffer, offerManager.getOffer(almostNullOffer.getId()));
 
     }
 
@@ -43,6 +68,10 @@ public class OfferManagerTest {
 
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testNullPointerException2(){
+        offerManager.store(nullOffer);
 
+    }
 
 }
