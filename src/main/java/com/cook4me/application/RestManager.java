@@ -13,8 +13,9 @@ import java.util.List;
 
 /**
  * Created by Paweł Proc on 2016-12-03.
- * <p>
+ *
  * Class is responsible for provide REST interface from backed site.
+ *
  */
 
 @RestController

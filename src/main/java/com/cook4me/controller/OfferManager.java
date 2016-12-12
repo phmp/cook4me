@@ -10,13 +10,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.log4j.Logger;
-
 import static org.apache.log4j.Level.INFO;
 
 /**
  * Created by Paweł Proc on 2016-12-06.
- * <p>
+ *
  * Class is responsible for handling all operation related with Offers.
+ *
  */
 
 @Component
@@ -26,10 +26,10 @@ public class OfferManager {
     private final AtomicLong counter = new AtomicLong();
     private Map<Long, Offer> offers = new HashMap<>();
 
-    public Offer store(Offer offer) {
+    public Offer store(Offer offer){
         Long id = counter.incrementAndGet();
         offer.setId(id);
-        offers.put(id, offer);
+        offers.put(id,offer);
         logger.log(INFO, "Offer: " + offer.toString() + " successfully added.");
         return offer;
     }
