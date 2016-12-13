@@ -2,6 +2,7 @@ package com.cook4me.controller;
 
 import com.cook4me.model.Offer;
 import org.junit.*;
+import static org.junit.Assert.*;
 
 
 /**
@@ -27,11 +28,11 @@ public class OfferManagerTest {
     public void testStoreOffer(){
         offerManager.store(offer);
 
-        Assert.assertEquals(1, offerManager.getOffers().size());
-        Assert.assertEquals(offer, offerManager.getOffer(offer.getId()));
-        Assert.assertEquals("bigos", offerManager.getOffer(offer.getId()).getName());
-        Assert.assertEquals(offer, offerManager.getOffers().get(0));
-        Assert.assertNull(offerManager.getOffer(offer.getId() + 24));
+        assertEquals(1, offerManager.getOffers().size());
+        assertEquals(offer, offerManager.getOffer(offer.getId()));
+        assertEquals("bigos", offerManager.getOffer(offer.getId()).getName());
+        assertEquals(offer, offerManager.getOffers().get(0));
+        assertNull(offerManager.getOffer(offer.getId() + 24));
 
     }
     @Test
@@ -39,7 +40,7 @@ public class OfferManagerTest {
         offerManager.store(offer);
         offerManager.store(offer);
 
-        Assert.assertEquals(2, offerManager.getOffers().size());
+        assertEquals(2, offerManager.getOffers().size());
 
     }
 
@@ -49,15 +50,15 @@ public class OfferManagerTest {
         offerManager.store(almostNullOffer);
         offerManager.store(almostNullOffer);
 
-        Assert.assertEquals(3, offerManager.getOffers().size());
-        Assert.assertEquals(almostNullOffer, offerManager.getOffer(almostNullOffer.getId()));
+        assertEquals(3, offerManager.getOffers().size());
+        assertEquals(almostNullOffer, offerManager.getOffer(almostNullOffer.getId()));
 
     }
 
     @Test
     public void negativeTest(){
-        Assert.assertNotEquals(offer, offerManager.getOffers());
-        Assert.assertNull(offerManager.getOffer((long) 2));
+        assertNotEquals(offer, offerManager.getOffers());
+        assertNull(offerManager.getOffer((long) 2));
 
     }
 
