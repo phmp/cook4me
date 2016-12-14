@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by Paweł Proc on 2016-12-03.
@@ -21,8 +20,6 @@ import java.util.logging.Logger;
 
 @RestController
 public class RestManager {
-
-    Logger logger = Logger.getLogger(getClass().toString());
 
     @Autowired
     private OfferManager offerManager;
