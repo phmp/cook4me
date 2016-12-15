@@ -16,10 +16,10 @@
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-top bg-yellow">
-    <div class="container">
-        <div class="navbar-header navbar-right">
-            <a id="addOrder" class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">Zaoferuj posiłek</a>
-        </div>
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <button id="orderButton" class="btn navbar-btn" data-toggle="modal" data-target="#myModal">Zaoferuj posiłek</button>
+        </ul>
     </div>
 </nav>
 
@@ -32,14 +32,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nazwa posiłku">
+                                    <input type="text" class="form-control meal-name" placeholder="Nazwa posiłku">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Data, godzina">
+                                    <input type="text" class="form-control" placeholder="Dzień, godzina">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea id="textArea" class="form-control vertical-resize" rows="3" placeholder="Opis"></textarea>
+                                    <textarea id="textArea" class="form-control vertical-resize" rows="3" placeholder="Opis posiłku"></textarea>
                                 </div>
                             </div>
                         </div>
