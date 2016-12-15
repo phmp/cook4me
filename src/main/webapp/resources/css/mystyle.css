@@ -18,16 +18,36 @@
     color: #212121;
     border: 0 none;
     transition-duration: 0.4s;
-    /*background: #212121;*/
+    margin-right: 15px;
 }
 .navbar-btn:hover {
-	background-color: rgba(255, 235, 59, 0.4);
+	background-color: rgba(255, 235, 59, 0.12);
 }
 .navbar-btn:active {
 	background-color: rgba(255, 235, 59, 0.4);
 }
-.navbar-btn:focus {
-	background-color: rgba(255, 235, 59, 0);
+.form-control {
+	font-family: "Verdana";
+	font-size: 16px;
+	height: auto;
+	color: #212121;
+	border: 1;
+	border-color: rgba(33, 33, 33, 0.4);
+	border-radius: 10px;
+}
+.meal-name {
+	font-size: 34px;
+}
+.btn-primary {
+	background-color: #ffeb3b;
+	border: 0 none;
+	color: #212121;
+	font-family: "Verdana";
+	font-size: 12px;
+}
+.btn-secondary {
+	color: #212121;
+	font-family: "Verdana";
+	font-size: 12px;
 	border: 0 none;
 }
-
