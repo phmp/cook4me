@@ -5,7 +5,7 @@ package com.cook4me.model;
  */
 public class Offer {
 
-    private long id;
+    private Long id;
     private String name;
     private String place;
     private String date;
@@ -17,7 +17,6 @@ public class Offer {
                  String date,
                  String description,
                  String contact) {
-        this.id = 0;
         this.name = name;
         this.place = place;
         this.date = date;
@@ -28,11 +27,11 @@ public class Offer {
     public Offer() {
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -67,6 +66,5 @@ public class Offer {
                 ", contact='" + contact + '\'' +
                 '}';
     }
-
 
 }
