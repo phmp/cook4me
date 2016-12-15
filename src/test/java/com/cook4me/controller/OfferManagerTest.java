@@ -2,6 +2,9 @@ package com.cook4me.controller;
 
 import com.cook4me.model.Offer;
 import org.junit.*;
+
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 
@@ -13,64 +16,73 @@ public class OfferManagerTest {
     private Offer offer;
     private OfferManager offerManager;
     private Offer nullOffer;
-    private Offer almostNullOffer;
+    private Offer offerWithNullFields;
 
     @Before
     public void setUp(){
         offerManager = new OfferManager();
         offer = new Offer("bigos", "Krakow", "20.12.2016", "yummy stuff", "880880880");
         nullOffer = null;
-        almostNullOffer = new Offer(null, null, null, null, null);
+        offerWithNullFields = new Offer(null, null, null, null, null);
 
     }
 
     @Test
-    public void testStoreOffer(){
+    public void idShouldBeAddedToOffer(){
         offerManager.store(offer);
+        int actualOfferListSize = offerManager.getOffers().size();
+        long offersId = offer.getId();
+        Offer actualOffer = offerManager.getOffer(offersId);
+        List actualListOfOffers = offerManager.getOffers();
 
-        assertEquals(1, offerManager.getOffers().size());
-        assertEquals(offer, offerManager.getOffer(offer.getId()));
-        assertEquals("bigos", offerManager.getOffer(offer.getId()).getName());
-        assertEquals(offer, offerManager.getOffers().get(0));
-        assertNull(offerManager.getOffer(offer.getId() + 24));
+        assertEquals("The size of list of offers should be 1.", 1, actualOfferListSize);
+        assertEquals("Input offer should be returned.", offer, actualOffer);
+        assertEquals("Name of returned offer should be <<bigos>>.", "bigos", actualOffer.getName());
+        assertEquals("First element of list of offers should be input offer.", offer, actualListOfOffers.get(0));
+        assertNull("Accessing offer with id that is not in the list should return null.", offerManager.getOffer(offersId + 24));
 
     }
     @Test
-    public void testStoreOffer2(){
+    public void everyOfferShouldBeAddedEvenIfItIsDuplicate(){
         offerManager.store(offer);
         offerManager.store(offer);
+        int actualOfferListSize = offerManager.getOffers().size();
 
-        assertEquals(2, offerManager.getOffers().size());
-
-    }
-
-    @Test
-    public void testStoreOffer3(){
-        offerManager.store(offer);
-        offerManager.store(almostNullOffer);
-        offerManager.store(almostNullOffer);
-
-        assertEquals(3, offerManager.getOffers().size());
-        assertEquals(almostNullOffer, offerManager.getOffer(almostNullOffer.getId()));
+        assertEquals("The size of list of offers should be 2.",2, actualOfferListSize);
 
     }
 
     @Test
-    public void negativeTest(){
-        assertNotEquals(offer, offerManager.getOffers());
-        assertNull(offerManager.getOffer((long) 2));
+    public void offerWithNullFieldsShouldBeAdded(){
+        offerManager.store(offer);
+        offerManager.store(offerWithNullFields);
+        offerManager.store(offerWithNullFields);
+        int actualOfferListSize = offerManager.getOffers().size();
+        long offerWithNullFieldsId = offerWithNullFields.getId();
+
+        assertEquals("The size of list of offers should be 3.",3, actualOfferListSize);
+        assertEquals("Input offer(with null fields) should be returned.", offerWithNullFields, offerManager.getOffer(offerWithNullFieldsId));
+
+    }
+
+    @Test
+    public void getOffersShouldReturnAList(){
+        offerManager.store(offer);
+
+        assertNotEquals("getOffers should return list, not a single object.", offer, offerManager.getOffers());
+        assertNull("Accessing offer with id that is not in the list should return null.", offerManager.getOffer(2L));
 
     }
 
     @Test(expected = NullPointerException.class)
-    public void testNullPointerException(){
-        offerManager.getOffer((long) 12).getName();
-        offerManager.getOffer((long) 34).getId();
+    public void nullPointerExceptionShouldBeThrown(){
+        offerManager.getOffer(12L).getName();
+        offerManager.getOffer(34L).getId();
 
     }
 
-    @Test(expected = NullPointerException.class)
-    public void testNullPointerException2(){
+    @Test(expected = Exception.class)
+    public void exceptionShouldBeThrown(){
         offerManager.store(nullOffer);
 
     }
