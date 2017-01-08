@@ -1,2 +1,8 @@
 language: java
-script: mvn clean install
+jdk: oraclejdk8
+script:
+  - mvn clean install
+#  - java -jar /home/travis/build/phmp/cook4me/target/`ls target | egrep cook.*\.jar$ | sort -r | head -1`
+
+
+
