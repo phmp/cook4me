@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
 
-import static java.util.logging.Level.INFO;
+import org.apache.log4j.Logger;
+import static org.apache.log4j.Level.INFO;
 
 /**
  * Created by Paweł Proc on 2016-12-06.
