@@ -52,18 +52,39 @@
 	border: 0 none;
 }
 
+.search-bar{
+    box-sizing: border-box;
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
 .search-bar-row {
+    display: table-row;
+    position: static;
+}
 	
+.search-bar .search-bar-location,
+.search-bar .search-bar-radius,
+.search-bar .search-bar-date,
+.search-bar .search-bar-submit {
+    padding: 15px 16px 8px;
+    display: table-cell;
+    float: none;
 }
 .search-bar-location {
-	display: inline-block;
+    width: 30%;
 }
 .search-bar-radius {
-	display: inline-block;
+    width: 30%;
 }
 .search-bar-date {
-	display: inline-block;
+    width: 20%;
 }
 .search-bar-submit {
-	display: inline-block;
+    width: 20%;
 }
+
