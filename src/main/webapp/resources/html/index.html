@@ -15,20 +15,20 @@
     <h1>Logo goes here</h1>
 </div>
 <!--Search bar definition -->
-<form name="Search" action="/search" method="get">
+<form  name="Search" action="/search" method="get">
 <div class="search-bar">
     <div class="search-bar-row  text-center">
         <div class="search-bar-location">
-            <input type="text" name="searchLocation" placeholder="Miasto, ulica">
+            <input type="text" class="search-bar-input" name="searchLocation" placeholder="Miasto, ulica">
         </div>
         <div class="search-bar-radius">
-            <input type="text" name="searchRadius" placeholder="+0m">
+            <input type="text" class="search-bar-input" name="searchRadius" placeholder="+0m">
         </div>
         <div class="search-bar-date">
-            <input type="text" name="searchDate" placeholder="Dzień, godzina">
+            <input type="text" class="search-bar-input" name="searchDate" placeholder="Dzień, godzina">
         </div>
         <div class="search-bar-submit">
-            <button id="searchButton" type="button" class="btn btn-primary" data-dismiss="modal">Szukaj</button>
+            <button id="searchButton" type="button" class="btn btn-primary search-bar-input" data-dismiss="modal">Szukaj</button>
         </div>
     </div>
 </div>
