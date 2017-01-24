@@ -18,13 +18,13 @@ function activateItem() {
 	request.setRequestHeader("Content-type", "application/json");
     request.onreadystatechange = function() {//Call a function when the state changes.
     	if(request.readyState == 4 && request.status == 200) {
-    		displayCurrentOffer();
+    		getAndDisplayLastOffer();
     	}
     }
 	request.send(params);
 }
 
-function displayCurrentOffer() {
+function getAndDisplayLastOffer() {
     var request = new XMLHttpRequest();
     var url = "/offers";
     request.open("GET", url, true);
@@ -32,12 +32,12 @@ function displayCurrentOffer() {
     request.onload = function() {
         var offersList = JSON.parse(request.responseText);
         maxOfferId = offersList.length;
-        displaySingleOffer(maxOfferId);
+        getAndDisplaySingleOffer(maxOfferId);
     }
     request.send();
 }
 
-function displaySingleOffer(index) {
+function getAndDisplaySingleOffer(index) {
     var request = new XMLHttpRequest();
     var url = "/offers/" + index;
     request.open("GET", url, true);
