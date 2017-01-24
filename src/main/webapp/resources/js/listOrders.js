@@ -15,7 +15,7 @@ function listAllOffers() {
 }
 
 function listOffer(offer) {
-    var imagePath = 'https://placehold.it/150x80?text=IMAGE';
+    var imagePath = "../dummyDish.png";
     var objTo = document.getElementById('main-container')
     var offerDiv = document.createElement("div");
     offerDiv.className = "col-sm-4";
