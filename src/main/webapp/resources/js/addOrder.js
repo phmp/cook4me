@@ -11,12 +11,41 @@ function activateItem() {
 	var description = listItems[3].value;
 	var contact = listItems[4].value;
 
-	var http = new XMLHttpRequest();
+	var request = new XMLHttpRequest();
 	var url = "/offers";
 	var params = '{"name":"' + name + '","place":"' + place + '","date":"' + date + '","contact":"' + contact + '","description":"' + description + '"}'
-	http.open("POST", url, true);
-	http.setRequestHeader("Content-type", "application/json");
-	http.send(params);
+	request.open("POST", url, true);
+	request.setRequestHeader("Content-type", "application/json");
+    request.onreadystatechange = function() {//Call a function when the state changes.
+    	if(request.readyState == 4 && request.status == 200) {
+    		getAndDisplayLastOffer();
+    	}
+    }
+	request.send(params);
+}
+
+function getAndDisplayLastOffer() {
+    var request = new XMLHttpRequest();
+    var url = "/offers";
+    request.open("GET", url, true);
+
+    request.onload = function() {
+        var offersList = JSON.parse(request.responseText);
+        maxOfferId = offersList.length;
+        getAndDisplaySingleOffer(maxOfferId);
+    }
+    request.send();
+}
+
+function getAndDisplaySingleOffer(index) {
+    var request = new XMLHttpRequest();
+    var url = "/offers/" + index;
+    request.open("GET", url, true);
+
+    request.onload = function() {
+        listOffer(JSON.parse(request.responseText));
+    }
+    request.send();
 }
 
 function clearText() {

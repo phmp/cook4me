@@ -39,7 +39,6 @@ public class OfferManagerTest {
         assertEquals("Input offer should be returned.", offer, actualOffer);
         assertEquals("Name of returned offer should be <<bigos>>.", "bigos", actualOffer.getName());
         assertEquals("First element of list of offers should be input offer.", offer, actualListOfOffers.get(0));
-        assertNull("Accessing offer with id that is not in the list should return null.", offerManager.getOffer(offersId + 24));
 
     }
     @Test
@@ -70,7 +69,6 @@ public class OfferManagerTest {
         offerManager.store(offer);
 
         assertNotEquals("getOffers should return list, not a single object.", offer, offerManager.getOffers());
-        assertNull("Accessing offer with id that is not in the list should return null.", offerManager.getOffer(2L));
 
     }
 

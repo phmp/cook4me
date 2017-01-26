@@ -50,8 +50,6 @@ public class RestManagerTest {
 
 
         assertEquals("Input offer should be returned.", offer, storedOffer);
-        assertEquals(offer, restManager.getOffers().get(0));
-
         assertEquals("Name of returned offer should be <<pierogi>>.", "pierogi", storedOffer.getName());
         assertEquals("The size of list of offers should be 1.",1, actualOfferListSize);
         assertEquals("First element of list of offers should be input offer.",offer, actualOfferList.get(0));
