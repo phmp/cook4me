@@ -70,10 +70,7 @@
     display: table;
     width: 100%;
 }
-.search-bar .search-bar-location,
-.search-bar .search-bar-radius,
-.search-bar .search-bar-date,
-.search-bar .search-bar-submit {
+.search-bar-element{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
