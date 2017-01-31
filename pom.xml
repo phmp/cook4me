@@ -6,7 +6,10 @@
     <groupId>cookforme</groupId>
     <artifactId>cook4me</artifactId>
     <version>0.0.2-SNAPSHOT</version>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c060e58... add SNAPSHOT
 
     <parent>
         <groupId>org.springframework.boot</groupId>
