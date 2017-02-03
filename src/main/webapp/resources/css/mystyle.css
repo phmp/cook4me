@@ -17,14 +17,21 @@
     font-size: 16px;
     color: #212121;
     border: 0 none;
+    border-radius: 0px;
     transition-duration: 0.4s;
     margin-right: 15px;
 }
 .navbar-btn:hover {
 	background-color: rgba(255, 235, 59, 0.12);
+	box-shadow: none;
 }
 .navbar-btn:active {
 	background-color: rgba(255, 235, 59, 0.4);
+	box-shadow: none;
+}
+.form-group{
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 .form-control {
 	font-family: "Verdana";
@@ -35,15 +42,33 @@
 	border-color: rgba(33, 33, 33, 0.4);
 	border-radius: 10px;
 }
+.col-md-6-mod{
+    padding-left: 0px;
+}
 .meal-name {
 	font-size: 34px;
 }
-.btn-primary {
-	background-color: #ffeb3b;
+.btn-primary-my{
+	background-color: rgba(255, 235, 59, 1);
 	border: 0 none;
 	color: #212121;
 	font-family: "Verdana";
 	font-size: 12px;
+}
+.btn-primary-my:hover{
+    background-color: rgba(255, 235, 59, 0.6);
+    color: #212121;
+    box-shadow: none;
+}
+.btn-primary-my:focus{
+    background-color: rgba(255, 235, 59, 1);
+    color: #212121;
+    box-shadow: none;
+}
+.btn-primary-my:active{
+    background-color: rgba(255, 235, 59, 1);
+    color: #212121;
+    box-shadow: none;
 }
 .btn-secondary {
 	color: #212121;
