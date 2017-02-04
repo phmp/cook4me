@@ -34,18 +34,31 @@
     margin-bottom: 7px;
 }
 .form-control {
-	font-family: "Verdana";
-	font-size: 16px;
-	height: auto;
-	color: #212121;
-	border: 1;
-	border-color: rgba(33, 33, 33, 0.4);
-	border-radius: 10px;
-}
+ 	font-family: "Verdana";
+ 	font-size: 16px;
+ 	height: auto;
+ 	color: #212121;
+ 	border: 1;
+ 	border-color: rgba(33, 33, 33, 0.4);
+ 	border-radius: 10px;
+ }
+ .form-control:focus {
+ 	font-family: "Verdana";
+ 	font-size: 16px;
+ 	height: auto;
+ 	color: #212121;
+ 	border: 1;
+ 	border-color: rgba(255, 235, 59, 1);
+ 	border-radius: 10px;
+ 	box-shadow: 0 0 1px 3px rgba(255, 235, 59, 0.35);
+ }
 .col-md-6-mod{
     padding-left: 0px;
 }
 .meal-name {
+	font-size: 34px;
+}
+.meal-name:focus {
 	font-size: 34px;
 }
 .btn-primary-my{
