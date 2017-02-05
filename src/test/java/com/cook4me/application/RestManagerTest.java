@@ -1,6 +1,7 @@
 package com.cook4me.application;
 
 import com.cook4me.controller.OfferManager;
+import com.cook4me.controller.OfferService;
 import com.cook4me.model.Offer;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +23,7 @@ import static org.junit.Assert.*;
  */
 public class RestManagerTest {
     @Mock
-    private OfferManager mockOfferManager;
+    private OfferService mockOfferService;
 
     @InjectMocks
     private RestManager restManager;
@@ -31,20 +32,20 @@ public class RestManagerTest {
 
     @Before
     public void setUp(){
-      mockOfferManager = mock(OfferManager.class);
+      mockOfferService = mock(OfferService.class);
       offer = new Offer("pierogi", "Krakow", "11.04.2014", "ruskie", "888888888");
       restManager = new RestManager();
 
       MockitoAnnotations.initMocks(this);
-      when(mockOfferManager.store(offer)).thenReturn(offer);
+      when(mockOfferService.store(offer)).thenReturn(offer);
 
     }
 
     @Test
     public void restManagerShouldUseOfferManagerToStore(){
         Offer storedOffer = restManager.storeOffer(offer);
-        verify(mockOfferManager, times(1)).store(offer);
-        when(mockOfferManager.getOffers()).thenReturn(new ArrayList<Offer>(){{add(offer);}});
+        verify(mockOfferService, times(1)).store(offer);
+        when(mockOfferService.getOffers()).thenReturn(new ArrayList<Offer>(){{add(offer);}});
         List actualOfferList = restManager.getOffers();
         int actualOfferListSize = restManager.getOffers().size();
 

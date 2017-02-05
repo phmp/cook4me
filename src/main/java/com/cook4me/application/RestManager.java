@@ -1,6 +1,7 @@
 package com.cook4me.application;
 
 import com.cook4me.controller.OfferManager;
+import com.cook4me.controller.OfferService;
 import com.cook4me.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,22 +23,22 @@ import java.util.List;
 public class RestManager {
 
     @Autowired
-    private OfferManager offerManager;
+    private OfferService offerService;
 
     @RequestMapping(value = "/offers", method = RequestMethod.POST)
     public Offer storeOffer(@RequestBody Offer offer) {
-        return offerManager.store(offer);
+        return offerService.store(offer);
     }
 
     @RequestMapping(value = "/offers/{id}", method = RequestMethod.GET)
     public Offer getOfferById(@PathVariable long id) {
-        Offer offer = offerManager.getOffer(id);
+        Offer offer = offerService.getOffer(id);
         return offer;
     }
 
     @RequestMapping(value = "/offers", method = RequestMethod.GET)
     public List<Offer> getOffers() {
-        List<Offer> offers = offerManager.getOffers();
+        List<Offer> offers = offerService.getOffers();
         return offers;
     }
 
