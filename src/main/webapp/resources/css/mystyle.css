@@ -48,9 +48,10 @@
  	height: auto;
  	color: #212121;
  	border: 1;
- 	border-color: rgba(255, 235, 59, 1);
+ 	border-color: rgba(33, 33, 33, 0.4);
  	border-radius: 10px;
- 	box-shadow: 0 0 1px 3px rgba(255, 235, 59, 0.35);
+ 	box-shadow: none;
+ 	background-color: rgba(255, 236, 61, 0.08);
  }
 .col-md-6-mod{
     padding-left: 0px;
